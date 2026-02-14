@@ -1,0 +1,21 @@
+<LanguageData>
+	<!-- =======Mod Settings======= -->
+	<!-- Pull -->
+	<ScaldingStrikeSTNL>Scalding Strike</ScaldingStrikeSTNL>
+	<ScaldingDamageSTNL>Burn Damage: {0}</ScaldingDamageSTNL>
+	<!-- Laceraqua -->
+	<LaceraquaSTNL>Laceraqua</LaceraquaSTNL>
+	<LaceraquadamageSTNL>Cut Damage: {0}</LaceraquadamageSTNL>
+	<!-- Vortex -->
+	<VortexSTNL>Whirlpool</VortexSTNL>
+	<VortexDamageSTNL>Bruise Damage: {0}</VortexDamageSTNL>
+	<!-- ========Utility======== -->
+	<!-- Wellspring -->
+	<WellspringSTNL>Wellspring</WellspringSTNL>
+	<HydromancerWellspringRegenSTNL>Wellspring Psyfocus Regen Per Sec: {0}</HydromancerWellspringRegenSTNL>
+	<!-- Hydrend -->
+	<HydrendSTNL>Hydrend</HydrendSTNL>
+	<HydrendOneShotGearSTNL>Hydrend Always One Shots Apparel?</HydrendOneShotGearSTNL>
+	<HydrendOneShotGearDescSTNL>Hydrend won't scale with psychic sensitivity and will always destroy apparel in one cast if this is checked.</HydrendOneShotGearDescSTNL>
+	<HydrendTresholdToBreakSTNL>Psychic Sensitivity Required To One Shot Apparel: {0}</HydrendTresholdToBreakSTNL>
+</LanguageData>

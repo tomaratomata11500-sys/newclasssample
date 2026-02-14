@@ -1,0 +1,155 @@
+<Defs>
+
+
+
+<HediffDef>
+	<hediffClass>HediffWithComps</hediffClass>
+	<defName>VPE_Hydromancer_WellspringSTNL</defName>
+	<label>Wellspring</label>
+	<description>This person is regenerating psyfocus.</description>
+	<descriptionShort>This person is regenerating psyfocus.</descriptionShort>
+	<defaultLabelColor>(0, 0.3, 1)</defaultLabelColor>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>false</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<statFactors>
+				<!-- <PsychicSensitivity>0</PsychicSensitivity> -->
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>60000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+<li Class="VPE_Hydromancer.HediffCompProperties_PsyfocusRegen"/>
+	</comps>
+</HediffDef> 
+
+<HediffDef>
+	<defName>VPE_Hydromancer_LaceraquaSTNL</defName>
+	<label>Laceraqua</label>
+	<description>This creature's internal organs are being shredded by circular blades made out of water.</description>
+	<descriptionShort>This creature's internal organs are being shredded by circular blades made out of water.</descriptionShort>
+	<defaultLabelColor>(0.4, 0.4, 0.7)</defaultLabelColor>
+	<hediffClass>VPE_Hydromancer.Hediff_Laceraqua</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>60000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+		<li Class="VanillaPsycastsExpanded.HediffCompProperties_SpawnFilth">
+			<filthDef>Filth_Blood</filthDef>
+			<intervalRate>60</intervalRate>
+			<filthCount>1~3</filthCount>
+		</li>
+	</comps>
+</HediffDef> 
+
+<HediffDef>
+	<defName>VPE_Hydromancer_HydroshieldSTNL</defName>
+	<label>Hydro shield</label>
+	<description>This creature is being protected by a shield made out of water, they cannot be set on fire and nearby flames will be put out as they stand near them.</description>
+	<descriptionShort>This creature is being protected by a shield made out of water, they cannot be set on fire and nearby flames will be put out as they stand near them.</descriptionShort>
+	<defaultLabelColor>(0.3, 0.3, 0.7)</defaultLabelColor>
+	<hediffClass>VPE_Hydromancer.Hediff_HydroShield</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>False</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+			<statFactors>
+				<Flammability>0</Flammability>
+			</statFactors>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>60000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_Effecter">
+			<stateEffecter>VPE_HydroshieldSTNL</stateEffecter>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef> 
+
+
+<HediffDef>
+	<defName>VPE_Hydromancer_SaltwoundSTNL</defName>
+	<label>Salt</label>
+	<description>Salt buildup present in the wound, causing a horrible amount of pain in the affected part.</description>
+	<descriptionShort>Salt buildup present in the wound, causing a horrible amount of pain in the affected part.</descriptionShort>
+	<defaultLabelColor>(0, 1, 1)</defaultLabelColor>
+	<hediffClass>HediffWithComps</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>True</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+		<painOffset>0.20</painOffset>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>20000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+</HediffDef> 
+	
+<HediffDef>
+	<defName>VPE_Hydromancer_NeuralSiphonSTNL</defName>
+	<label>Neural Siphon</label>
+	<description>This person is acting as a living neural heat sink, they will absorb the neural heat of nearby psycasters.</description>
+	<descriptionShort>This person is acting as a living neural heat sink, they will absorb the neural heat of nearby psycasters.</descriptionShort>
+	<defaultLabelColor>(0, 1, 1)</defaultLabelColor>
+	<hediffClass>VPE_Hydromancer.Hediff_NeuralSiphon</hediffClass>
+	<initialSeverity>1</initialSeverity>
+	<makesSickThought>False</makesSickThought>
+	<scenarioCanAdd>false</scenarioCanAdd>
+	<isBad>False</isBad>
+	<everCurableByItem>false</everCurableByItem>
+	<keepOnBodyPartRestoration>True</keepOnBodyPartRestoration>
+	<stages>
+		<li>
+		</li>
+	</stages>
+	<comps>
+		<li Class="HediffCompProperties_Disappears">
+			<disappearsAfterTicks>20000</disappearsAfterTicks>
+			<showRemainingTime>True</showRemainingTime>
+		</li>
+		<li Class="VanillaPsycastsExpanded.HediffCompProperties_DisappearsOnDowned"/>
+		<li Class="HediffCompProperties_DisappearsOnDeath"/>
+	</comps>
+
+</HediffDef>
+
+</Defs>

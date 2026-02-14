@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>	
+
+  <!-- Level 1 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_CleanSTNL</defName>
+	<label>Clean</label>
+	<description>Clean the target piece of apparel using a small amount of water from a distant ocean, will also clean filth in the area and put out fires.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Clean</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_Clean</abilityClass>
+	<chance>0</chance>
+	<castTime>60</castTime>
+	<range>15.5</range>
+	<hasAoE>True</hasAoE>
+	<radius>5.5</radius>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+		<targetingParametersForAoE>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>true</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParametersForAoE>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Resurrect_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>1</level>
+			<order>1</order>
+			<psyfocusCost>0.03</psyfocusCost>
+			<entropyGain>5</entropyGain>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+ <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_SaltWoundsSTNL</defName>
+	<label>Salt Wounds</label>
+	<description>Skip ocean water directly onto the target's bleeding wounds, causing a horrible amount of pain in the affected part.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Salt</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_Saltwound</abilityClass>
+	<castTime>60</castTime>
+	<range>15.5</range>
+	<durationTime>20000</durationTime>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicPulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>1</level>
+			<order>2</order>
+			<psyfocusCost>0.04</psyfocusCost>
+			<entropyGain>5</entropyGain>
+			<prerequisites>
+			<li>VPE_CleanSTNL</li>
+			</prerequisites>
+		</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>Watersplash_SaltWoundsSTNL</effecterDef>
+	<maintainForTicks>60</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+<!-- Level 2 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HydromancerHydroShieldSTNL</defName>
+	<label>Hydro Shield</label>
+	<description>Envelop the target with a shield made out of water that will prevent the target from catching fire for the duration of this ability.\n\nWill put out fire in a 2.5 cells radius.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Shield</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>120</castTime>
+	<range>14.9</range>
+	<radius>2.5</radius>
+	<!-- <hasAoE>True</hasAoE> -->
+    <durationTime>5000</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>PsycastPsychicEffect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>2</level>
+			<order>1</order>
+			<psyfocusCost>0.10</psyfocusCost>
+			<entropyGain>10</entropyGain>
+			<prerequisites>
+			<li>VPE_CleanSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+			<onTarget>
+				<li>VPE_Hydromancer_HydroshieldSTNL</li>
+			</onTarget>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Watersplash_MidSTNL</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>0.5</scale>
+			<!-- <onCaster>true</onCaster> -->
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+ <VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_ScaldingBurstSTNL</defName>
+	<label>Scalding Strike</label>
+	<description>Inflict a burn on the target by skipping boiling water directly onto them.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Scalding</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_ScaldingBurst</abilityClass>
+	<castTime>60</castTime>
+	<range>14.9</range>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Resurrect_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>2</level>
+			<order>3</order>
+			<psyfocusCost>0.05</psyfocusCost>
+			<entropyGain>15</entropyGain>
+			<prerequisites>
+			<li>VPE_SaltWoundsSTNL</li>
+			</prerequisites>
+		</li>
+<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>Watersplash_MidSTNL</effecterDef>
+	<maintainForTicks>60</maintainForTicks>
+	<scale>1</scale>
+</li>
+
+<li Class="VEF.Abilities.AbilityExtension_FleckOnTarget">
+	<fleckDef>WaterskipSplashParticles</fleckDef>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 3 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HydromancerLaceraquaSTNL</defName>
+	<label>Laceraqua</label>
+	<description>Convert the water present inside of the targets into razor-sharp blades, these blades will cause internal bleeding within the affected creatures over time.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Laceraqua</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>120</castTime>
+	<durationTime>1200</durationTime>
+	<durationTimeStatFactors>
+		<PsychicSensitivity>1</PsychicSensitivity>
+	</durationTimeStatFactors>
+	<range>14.9</range>
+	<radius>1.5</radius>
+	<hasAoE>True</hasAoE>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>True</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<targetingParametersForAoE>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>true</canTargetMechs>
+	</targetingParametersForAoE>
+	<needsTicking>true</needsTicking>
+	<castSound>Psycast_Skip_Pulse</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>3</level>
+			<order>3</order>
+			<psyfocusCost>0.15</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+				<li>VPE_ScaldingBurstSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+			<onTarget>
+				<li>VPE_Hydromancer_LaceraquaSTNL</li>
+			</onTarget>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Watersplash_MidSTNL</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>5</scale>
+			<!-- <onCaster>true</onCaster> -->
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_DestroyGearSTNL</defName>
+	<label>Hydrend</label>
+	<description>Attack the target's equipment with a high pressure burst of water, damaging their worn apparel based on the psychic sensitivity of the caster.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Hydrend</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_DestroyApparel</abilityClass>
+	<castTime>120</castTime>
+	<range>15.5</range>
+	<chance>0</chance>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Resurrect_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>3</level>
+			<order>1</order>
+			<psyfocusCost>0.12</psyfocusCost>
+			<entropyGain>30</entropyGain>
+			<prerequisites>
+				<li>VPE_HydromancerHydroShieldSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Watersplash_MidSTNL</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>1</scale>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_FleckOnTarget">
+			<fleckDef>WaterskipSplashParticles</fleckDef>
+			<scale>1</scale>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+
+
+<!-- Level 4 -->
+
+
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_PurifyingTideSTNL</defName>
+	<label>Purifying Tide</label>
+	<description>Purify the target of diseases and infections by purging their body of foreign bacteria.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Purifying</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_PurifyingTide</abilityClass>
+	<chance>0</chance>
+	<castTime>60</castTime>
+	<range>15.5</range>
+	<targetMode>Pawn</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>True</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>Psycast_WordOf_Effect</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>4</level>
+			<order>1</order>
+			<psyfocusCost>0.30</psyfocusCost>
+			<entropyGain>25</entropyGain>
+			<prerequisites>
+				<li>VPE_DestroyGearSTNL</li>
+			</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+			<effecterDef>Watersplash_MidSTNL</effecterDef>
+			<maintainForTicks>60</maintainForTicks>
+			<scale>1</scale>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+ 
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HydromancerVortexSTNL</defName>
+	<label>Whirlpool</label>
+	<description>Replicate a whirlpool that will pull enemies towards the target location.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Whirlpool</iconPath>
+	<abilityClass>VPE_Hydromancer.Ability_Vortex</abilityClass>
+	<castTime>120</castTime>
+	<range>20.9</range>
+	<radius>5</radius>
+	<!-- <hasAoE>True</hasAoE> -->
+	<durationTime>1200</durationTime>
+	<chance>0</chance>
+	<targetMode>Location</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Psyring_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>4</level>
+			<order>3</order>
+			<psyfocusCost>0.40</psyfocusCost>
+			<entropyGain>35</entropyGain>
+			<prerequisites>
+	<li>VPE_HydromancerLaceraquaSTNL</li>
+</prerequisites>
+		</li>
+		<li Class="VPE_Hydromancer.AbilityExtension_Vortex">
+			<duration>1200</duration>
+			<interval>45</interval>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+ 
+ <!-- Level 5 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_TorrentialRainSTNL</defName>
+	<label>Torrential Rain</label>
+	<description>Warp a distant storm towards your location, the rain will cause floods and put out fires while also reducing the movement speed of creatures that aren't under a roof.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Torrent</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>600</castTime>
+	<durationTime>60000</durationTime>
+	<chance>0</chance>
+	<targetMode>Self</targetMode>
+	<castSound>Psycast_Neuroquake_Effect</castSound>
+	<showUndrafted>true</showUndrafted>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>5</level>
+			<order>3</order>
+			<psyfocusCost>0.5</psyfocusCost>
+			<entropyGain>60</entropyGain>
+			<prerequisites>
+			<li>VPE_HydromancerVortexSTNL</li>
+	<li>VPE_PurifyingTideSTNL</li>
+</prerequisites>
+		</li>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_GameCondition">
+			<gameCondition>TorrentialRainSTNL</gameCondition>
+			<durationDays>1</durationDays>
+		</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>  
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HydromancerNeuralSiphonSTNL</defName>
+	<label>Neural Siphon</label>
+	<description>Become a living heat sink for nearby psycasters, taking their neural heat for yourself.\n\nThis ability will cancel itself early if the caster gets knocked down.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Siphon</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>180</castTime>
+	<range>5</range>
+	<!-- <radius>1.5</radius> -->
+    <durationTime>10000</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<chance>0</chance>
+	<targetMode>Self</targetMode>
+	<targetingParameters>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>True</canTargetSelf>
+		<canTargetAnimals>True</canTargetAnimals>
+		<canTargetPawns>True</canTargetPawns>
+		<canTargetHumans>True</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>True</canTargetMechs>
+	</targetingParameters>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Psyring_Cast</castSound>
+	<modExtensions>
+		<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+			<path>VPE_HydromancerSTNL</path>
+			<level>3</level>
+			<order>2</order>
+			<psyfocusCost>0.30</psyfocusCost>
+			<entropyGain>0</entropyGain>
+			<prerequisites>
+	<li>VPE_PurifyingTideSTNL</li>
+</prerequisites>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+			<onCaster>
+				<li>VPE_Hydromancer_NeuralSiphonSTNL</li>
+			</onCaster>
+		</li>
+		<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+	<effecterDef>Watersplash_VortexSTNL</effecterDef>
+	<maintainForTicks>60</maintainForTicks>
+	<scale>1</scale>
+</li>
+	</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+<!-- Level 6 -->
+
+<VEF.Abilities.AbilityDef ParentName="VPE_PsycastBase">
+	<defName>VPE_HydromancerWellspringSTNL</defName>
+	<label>Wellspring</label>
+	<description>Emanate a psychic pulse that will allow nearby psycasters to regenerate psyfocus over time.</description>
+	<iconPath>UI_HydromancerSTNL/Abilities/Wellspring</iconPath>
+	<abilityClass>VEF.Abilities.Ability_Blank</abilityClass>
+	<castTime>120</castTime>
+	<range>0</range>
+	<radius>2.5</radius>
+	<hasAoE>True</hasAoE>
+	<durationTime>10000</durationTime>
+    <durationTimeStatFactors>
+      <PsychicSensitivity>1</PsychicSensitivity>
+    </durationTimeStatFactors>
+	<chance>0</chance>
+	<targetMode>Self</targetMode>
+	<targetingParameters>
+		<canTargetLocations>true</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>false</canTargetAnimals>
+		<canTargetPawns>false</canTargetPawns>
+		<canTargetHumans>false</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>false</canTargetMechs> 
+	</targetingParameters>
+	<targetingParametersForAoE>
+		<canTargetLocations>false</canTargetLocations>
+		<canTargetSelf>false</canTargetSelf>
+		<canTargetAnimals>true</canTargetAnimals>
+		<canTargetPawns>true</canTargetPawns>
+		<canTargetHumans>true</canTargetHumans>
+		<canTargetItems>false</canTargetItems>
+		<canTargetMechs>true</canTargetMechs>
+	</targetingParametersForAoE>
+	<needsTicking>true</needsTicking>
+	<castSound>VPE_Psyring_Cast</castSound>
+<modExtensions>
+	<li Class="VanillaPsycastsExpanded.AbilityExtension_Psycast">
+		<path>VPE_HydromancerSTNL</path>
+		<level>2</level>
+		<order>2</order>
+		<psyfocusCost>0.60</psyfocusCost>
+		<entropyGain>40</entropyGain>
+		<prerequisites>
+	<li>VPE_HydromancerNeuralSiphonSTNL</li>
+</prerequisites>
+	</li>
+	<li Class="VEF.Abilities.AbilityExtension_ExtraHediffs">
+		<onTarget>
+			<li>VPE_Hydromancer_WellspringSTNL</li>
+		</onTarget>
+	</li>
+	<li Class="VEF.Abilities.AbilityExtension_EffecterOnTarget">
+		<effecterDef>Watersplash_MidSTNL</effecterDef>
+		<maintainForTicks>60</maintainForTicks>
+		<scale>5</scale>
+		<onCaster>true</onCaster>
+	</li>
+</modExtensions>
+</VEF.Abilities.AbilityDef>
+
+</Defs>
+

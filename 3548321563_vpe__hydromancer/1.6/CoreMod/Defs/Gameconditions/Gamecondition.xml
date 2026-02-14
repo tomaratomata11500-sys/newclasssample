@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<GameConditionDef>
+	<defName>TorrentialRainSTNL</defName>
+	<conditionClass>VPE_Hydromancer.GameCondition_NextWeatherEnd</conditionClass>
+	<label>Torrential Rain</label>
+	<description>An Hydromancer is causing a torrential rain in the area that will extinguish fires and reduce accuracy as well as cause floods.</description>
+	<letterDef>PositiveEvent</letterDef>
+	<weatherDef>TorrentialRainSTNL</weatherDef>
+	<canBePermanent>true</canBePermanent>
+	<natural>false</natural>
+	<allowUnderground>false</allowUnderground>
+</GameConditionDef>
+</Defs>

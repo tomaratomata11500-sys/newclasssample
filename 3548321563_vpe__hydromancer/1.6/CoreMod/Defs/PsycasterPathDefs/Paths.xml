@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+    <VanillaPsycastsExpanded.PsycasterPathDef>
+    <defName>VPE_HydromancerSTNL</defName>
+    <label>Hydromancer</label>
+    <description>Turn the tides in your favor.</description>
+    <background>UI_HydromancerSTNL/Tree/Hydromancertreebase</background>
+    <altBackground>UI_HydromancerSTNL/Tree/Hydromancertreebase</altBackground>
+    <tab>Misc</tab>
+    <tooltip>Turn the tides in your favor.</tooltip>
+  </VanillaPsycastsExpanded.PsycasterPathDef>
+
+</Defs>

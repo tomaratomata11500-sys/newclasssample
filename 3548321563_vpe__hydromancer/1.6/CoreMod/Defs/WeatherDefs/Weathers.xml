@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<WeatherDef>
+    <defName>TorrentialRainSTNL</defName>
+    <label>torrential rain</label>
+    <description>Torrential rain causes flooding. It also reduces the accuracy of ranged weapons, extinguishes fire, and slows people down.</description>
+    <workerClass>WeatherWorker_TorrentialRain</workerClass>
+    <temperatureRange>0~100</temperatureRange>
+    <windSpeedFactor>1.5</windSpeedFactor>
+    <accuracyMultiplier>0.75</accuracyMultiplier>
+    <moveSpeedMultiplier>0.8</moveSpeedMultiplier>
+    <favorability>Neutral</favorability>
+    <perceivePriority>1</perceivePriority>
+    <weatherThought>SoakingWet</weatherThought>
+    <rainRate>1</rainRate>
+    <ambientSounds>
+      <li>Ambient_TorrentialRain</li>
+    </ambientSounds>
+    <durationRange>30000~90000</durationRange>
+    <overlayClasses>
+      <li>WeatherOverlay_TorrentialRain</li>
+    </overlayClasses>
+    <commonalityRainfallFactor>
+      <points>
+        <li>(0, 0)</li>
+        <li>(1300, 1)</li>
+        <li>(4000, 3.0)</li>
+      </points>
+    </commonalityRainfallFactor>
+    <!-- Colors are Overcast -->
+    <skyColorsDay>
+      <sky>(0.8,0.8,0.8)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.7,0.7,0.7)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDay>
+    <skyColorsDusk>
+      <sky>(1,1,1)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.6,0.6,0.6)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsDusk>
+    <skyColorsNightEdge>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5,0.5,0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightEdge>
+    <skyColorsNightMid>
+      <sky>(0.35,0.40,0.45)</sky>
+      <shadow>(0.92,0.92,0.92)</shadow>
+      <overlay>(0.5,0.5,0.5)</overlay>
+      <saturation>0.9</saturation>
+    </skyColorsNightMid>
+  </WeatherDef>
+</Defs>

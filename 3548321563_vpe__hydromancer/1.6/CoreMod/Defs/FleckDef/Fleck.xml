@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <FleckDef ParentName="FleckBase_Thrown">
+    <defName>VPE_HydroRingSTNL</defName>
+    <graphicData>
+      <texPath>UI_HydromancerSTNL/Pawn/HydroRing_south</texPath>
+      <renderInstanced>true</renderInstanced>
+      <color>(255, 255, 255, 255)</color>
+	  <drawSize>(5,5)</drawSize>
+    </graphicData>
+    <altitudeLayer>Silhouettes</altitudeLayer>
+    <fadeInTime>0.1</fadeInTime>
+    <solidTime>0</solidTime>
+    <fadeOutTime>0.3</fadeOutTime>
+    <growthRate>-1</growthRate>
+  </FleckDef>
+
+<EffecterDef>
+	<defName>Watersplash_VortexSTNL</defName>
+	<maintainTicks>120</maintainTicks>
+	<children>
+		<li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<fleckDef>WaterskipSplashParticles</fleckDef>
+			<spawnLocType>OnTarget</spawnLocType>
+			<burstCount>100</burstCount>
+			<positionRadius>3</positionRadius>
+			<positionRadiusMin>1</positionRadiusMin>
+			<scale>.4~.5</scale>
+			<rotation>0~360</rotation>
+			<rotationRate>-0~5</rotationRate>
+			<angle>0~0</angle>
+			<speed>-5~-10</speed>
+			<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			<rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+			<attachToSpawnThing>true</attachToSpawnThing>
+		</li>
+		<li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<fleckDef>WaterskipSplashParticles</fleckDef>
+			<spawnLocType>OnTarget</spawnLocType>
+			<burstCount>100</burstCount>
+			<positionRadius>5</positionRadius>
+			<positionRadiusMin>3</positionRadiusMin>
+			<scale>.4~.5</scale>
+			<rotation>0~360</rotation>
+			<rotationRate>-0~5</rotationRate>
+			<angle>0~0</angle>
+			<speed>-5~-10</speed>
+			<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			<rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+			<attachToSpawnThing>true</attachToSpawnThing>
+		</li>
+	</children>
+</EffecterDef>
+
+<EffecterDef>
+	<defName>Watersplash_SaltWoundsSTNL</defName>
+	<maintainTicks>120</maintainTicks>
+	<children>
+		<li>
+			<subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+			<fleckDef>WaterskipSplashParticles</fleckDef>
+			<spawnLocType>OnTarget</spawnLocType>
+			<burstCount>20</burstCount>
+			<positionRadius>1</positionRadius>
+			<positionRadiusMin>0</positionRadiusMin>
+			<scale>.1~.3</scale>
+			<rotation>0~360</rotation>
+			<rotationRate>-0~5</rotationRate>
+			<angle>0~0</angle>
+			<speed>-1~-5</speed>
+			<fleckUsesAngleForVelocity>True</fleckUsesAngleForVelocity>
+			<rotateTowardsTargetCenter>true</rotateTowardsTargetCenter>
+			<attachToSpawnThing>true</attachToSpawnThing>
+		</li>
+	</children>
+</EffecterDef>
+
+ <EffecterDef>
+    <defName>Watersplash_MidSTNL</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SoundTriggered</subEffecterClass>
+        <soundDef>Bridge_CollapseWater</soundDef>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_Splash</moteDef>
+        <burstCount>9</burstCount>
+        <speed>4.3~5.9</speed>
+        <scale>1.3~1.6</scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerTriggered</subEffecterClass>
+        <moteDef>Mote_Splash</moteDef>
+        <burstCount>6~8</burstCount>
+        <speed>4.3~5.9</speed>
+        <scale>1.3~1.6</scale>
+      </li>
+    </children>
+  </EffecterDef>
+  
+   <EffecterDef>
+    <defName>VPE_HydroshieldSTNL</defName>
+    <children>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_Splash</moteDef>
+		<ticksBetweenMotes>30</ticksBetweenMotes>
+        <burstCount>40</burstCount>
+        <speed>-5</speed>
+        <scale>2</scale>
+      </li>
+      <li>
+        <subEffecterClass>SubEffecter_SprayerContinuous</subEffecterClass>
+        <moteDef>Mote_Splash</moteDef>
+		<ticksBetweenMotes>30</ticksBetweenMotes>
+        <burstCount>40</burstCount>
+        <speed>0</speed>
+        <scale>2</scale>
+      </li>
+    </children>
+  </EffecterDef>
+  
+
+</Defs>
